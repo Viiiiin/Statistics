@@ -1,0 +1,10 @@
+C:\Users\vboxuser\Desktop\Statistics\homework_1\homework_1\bin\Debug\homework_1.exe.config
+C:\Users\vboxuser\Desktop\Statistics\homework_1\homework_1\bin\Debug\homework_1.exe
+C:\Users\vboxuser\Desktop\Statistics\homework_1\homework_1\bin\Debug\homework_1.pdb
+C:\Users\vboxuser\Desktop\Statistics\homework_1\homework_1\obj\Debug\homework_1.csproj.AssemblyReference.cache
+C:\Users\vboxuser\Desktop\Statistics\homework_1\homework_1\obj\Debug\homework_1.Properties.Resources.resources
+C:\Users\vboxuser\Desktop\Statistics\homework_1\homework_1\obj\Debug\homework_1.csproj.GenerateResource.cache
+C:\Users\vboxuser\Desktop\Statistics\homework_1\homework_1\obj\Debug\homework_1.csproj.CoreCompileInputs.cache
+C:\Users\vboxuser\Desktop\Statistics\homework_1\homework_1\obj\Debug\homework_1.exe
+C:\Users\vboxuser\Desktop\Statistics\homework_1\homework_1\obj\Debug\homework_1.pdb
+C:\Users\vboxuser\Desktop\Statistics\homework_1\homework_1\obj\Debug\homework_1.Form1.resources
