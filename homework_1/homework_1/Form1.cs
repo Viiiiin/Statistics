@@ -230,20 +230,17 @@ namespace homework_1
 
         private float average(int i, float cumulativeAverage, int numberOfAttempts)
         {
-            // Caso base: se abbiamo superato la lunghezza dell'array, ritorna la media finale
             if (i >= result.Length)
             {
                 return numberOfAttempts > 0 ? cumulativeAverage : 0;
             }
 
-            // Verifica se il valore attuale è maggiore di zero
             if (result[i] > 0)
             {
-                numberOfAttempts++; // Incrementa il conteggio dei tentativi
-                cumulativeAverage += (result[i] - cumulativeAverage) / numberOfAttempts; // Aggiorna la media cumulativa
+                numberOfAttempts++;
+                cumulativeAverage += (result[i] - cumulativeAverage) / numberOfAttempts;
             }
 
-            // Chiamata ricorsiva per il prossimo indice
             return average(i + 1, cumulativeAverage, numberOfAttempts);
         }
 
