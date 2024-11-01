@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
+using System.Threading;
 namespace homework_1
 {
     public class Graph
@@ -57,35 +58,48 @@ namespace homework_1
                 current_point.Y -= this.y_space;
             }
 
-            CalculateMeanAndDeviation(result, out float mean, out float dev);
+            CalculateMeanAndDeviation(result, out float mean, out float var);
             if (time < this.server)
             {
-                g.DrawString($"Time T - Mean: {mean} - Dev {dev}", font, Brushes.Black, 40, 590);
+                g.DrawString($"Time T - Mean: {mean} - Var {var}", font, Brushes.Black, 40, 590);
             }
             else
             {
-                g.DrawString($"Time T - Mean: {mean} - Dev {dev}", font, Brushes.Black, 40, 610);
+                g.DrawString($"Time N - Mean: {mean} - Var {var}", font, Brushes.Black, 40, 610);
             }
         }
 
         // Metodo per calcolare la media e la deviazione
-        public void CalculateMeanAndDeviation(int[] result, out float mean, out float dev)
+        public void CalculateMeanAndDeviation(int[] result, out float mean, out float var)
         {
-            float delta;
-            int n = 1;
+            float delta, dev;
+            int n = 0;
             mean = 0;
             dev = 0;
-
-            for (int i = 0; i < result.Length; i++)
+            int score,offset = 0;
+            if (this.server +1  < result.Length) // ?????
             {
-                if (result[i] > 0)
+                offset = this.server;
+            }
+
+            for (int index = 0; index < result.Length; index++)
+            {
+                int count = result[index]; // Numero di persone con quello score
+                if (count > 0) // Solo per score presenti
                 {
-                    delta = result[i] - mean;
-                    mean += delta / n;
-                    dev += (result[i] - mean) * delta;
-                    n++;
+                    score = index - offset; // Calcola lo score reale, considerando l'offset
+
+                    for (int i = 0; i < count; i++) // Per ogni persona con quello score
+                    {
+                        n++;
+                        delta = score - mean;
+                        mean += delta / n; // Aggiorna la media
+                        dev += delta * (score - mean); // Aggiorna la somma dei quadrati delle deviazioni
+                    }
                 }
             }
+            var = dev / n;
+            
         }
 
         // Metodo per creare il contorno dei grafici

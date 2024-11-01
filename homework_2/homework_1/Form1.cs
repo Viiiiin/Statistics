@@ -25,6 +25,7 @@ namespace homework_1
         private RandomWalk randomWalk;
         private PaintEventArgs paintEventArgs;
         private BerLambda berlambda;
+        private SqrN sqrn;
         private int t,server;
         private int selectedAttack = 0; // 0 = None, 1 = Bernulli, 2 = RandomWalk, 3 = RelFreq
 
@@ -59,6 +60,7 @@ namespace homework_1
                 this.berlambda = new BerLambda(graph, server, attacker, t, probability,lambda);
                 this.relfreq = new RelFreq(graph, server, attacker, t, probability);
                 this.randomWalk = new RandomWalk(graph, server, attacker, t, probability);
+                this.sqrn = new SqrN(graph, server, attacker, t,probability);
                 this.t = t;
 
                 // Determina l'attacco selezionato
@@ -70,6 +72,8 @@ namespace homework_1
                    this.selectedAttack = 3;
                 else if(radioButton4.Checked)
                     this.selectedAttack = 4;
+                else if (radioButton5.Checked)
+                    this.selectedAttack = 5;
 
                 // Dissocia e riassocia l'evento Paint
                 this.Paint -= Form1_Paint;
@@ -106,6 +110,12 @@ namespace homework_1
                     this.berlambda.Paint_Attack(sender, e);
                     result = berlambda.result;
                     result_t = berlambda.result_t;
+                    break;
+
+                case 5: // sqrN
+                    this.sqrn.Paint_Attack(sender, e);
+                    result = sqrn.result;
+                    result_t = sqrn.result_t;
                     break;
             }
 
@@ -207,6 +217,11 @@ namespace homework_1
         }
 
         private void txtlambda_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton5_CheckedChanged(object sender, EventArgs e)
         {
 
         }
