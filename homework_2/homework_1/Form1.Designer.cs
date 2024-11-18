@@ -45,6 +45,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.txtGen = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.labelMean = new System.Windows.Forms.Label();
+            this.labelVar = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtserver
@@ -214,12 +219,63 @@
             this.radioButton5.UseVisualStyleBackColor = true;
             this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
             // 
+            // txtGen
+            // 
+            this.txtGen.Location = new System.Drawing.Point(443, 60);
+            this.txtGen.Name = "txtGen";
+            this.txtGen.Size = new System.Drawing.Size(100, 20);
+            this.txtGen.TabIndex = 18;
+            this.txtGen.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(383, 63);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 13);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Generation";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Location = new System.Drawing.Point(922, 60);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(48, 17);
+            this.radioButton6.TabIndex = 19;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "HM6";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            this.radioButton6.CheckedChanged += new System.EventHandler(this.radioButton6_CheckedChanged);
+            // 
+            // labelMean
+            // 
+            this.labelMean.AutoSize = true;
+            this.labelMean.Location = new System.Drawing.Point(65, 595);
+            this.labelMean.Name = "labelMean";
+            this.labelMean.Size = new System.Drawing.Size(0, 13);
+            this.labelMean.TabIndex = 20;
+            // 
+            // labelVar
+            // 
+            this.labelVar.AutoSize = true;
+            this.labelVar.Location = new System.Drawing.Point(235, 595);
+            this.labelVar.Name = "labelVar";
+            this.labelVar.Size = new System.Drawing.Size(0, 13);
+            this.labelVar.TabIndex = 21;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(1386, 635);
+            this.Controls.Add(this.labelVar);
+            this.Controls.Add(this.labelMean);
+            this.Controls.Add(this.radioButton6);
+            this.Controls.Add(this.txtGen);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.radioButton5);
             this.Controls.Add(this.radioButton4);
             this.Controls.Add(this.txtlambda);
@@ -264,6 +320,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.TextBox txtGen;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.Label labelMean;
+        private System.Windows.Forms.Label labelVar;
     }
 }
 

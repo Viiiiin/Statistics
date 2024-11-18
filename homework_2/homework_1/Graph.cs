@@ -112,7 +112,7 @@ namespace homework_1
             }
             Graphics g = e.Graphics;
             int max = result.Max();
-            float space = ((float)this.width / 5) / max; // RIPORTA INFINIY
+            float space = ((float)this.width / 5) / max; 
             this.x_space = this.width / (float)this.server;
             this.y_space = this.height / (float)result.Length-1;
             Pen blackPen = new Pen(Color.Black, 2);
