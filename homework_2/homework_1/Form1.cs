@@ -27,6 +27,8 @@ namespace homework_1
         private BerLambda berlambda;
         private SqrN sqrn;
         private ThAndEffective tae;
+        private MThAndEffective mtae;
+        private CryptoDistribution cr;
         private int t,server;
         private int homework = 0;
 
@@ -54,6 +56,8 @@ namespace homework_1
             bool ver = t < server && t > 0;
             bool verlamnda = lambda < server;
             ValidateInputs();
+            int[] casoA_Basi = { 2, 3, 10, 17 };
+            int[] casoB_Basi = { 3, 6, 9, 12 };
             this.server = server;
             this.graph = new Graph(attacker, server, this.Width, this.Height);
             this.bernulli = new Bernulli(graph, server, attacker, t, probability);
@@ -62,6 +66,8 @@ namespace homework_1
             this.randomWalk = new RandomWalk(graph, server, attacker, t, probability);
             this.sqrn = new SqrN(graph, server, attacker, t,probability);
             this.tae = new ThAndEffective(generation, attacker, this.Width, this.Height,labelMean,labelVar);
+            this.mtae= new MThAndEffective(generation, attacker, this.Width, this.Height, labelMean, labelVar);
+            this.cr = new CryptoDistribution(server,this.Width,this.Height,labelMean,labelVar);
             this.t = t;
 
             // Determina l'attacco selezionato
@@ -77,6 +83,10 @@ namespace homework_1
                 this.homework = 5;
             else if (radioButton6.Checked)
                 this.homework = 6;
+            else if (radioButton7.Checked)
+                this.homework = 7;
+            else if (radioButton8.Checked)
+                this.homework = 8;
 
             // Dissocia e riassocia l'evento Paint
             this.Paint -= Form1_Paint;
@@ -143,6 +153,12 @@ namespace homework_1
                 case 6:
                     this.tae.Create_Distribution(sender, e);
                     break;
+                case 7:
+                    this.mtae.Create_Distribution(sender, e);
+                    break;
+                case 8:
+                    this.cr.DrawDistributions(sender, e);
+                    break;
             }
 
            
@@ -152,7 +168,7 @@ namespace homework_1
         {
             this.Close();
         }
- 
+
 
         private void HandleInputFields()
         {
@@ -160,17 +176,17 @@ namespace homework_1
             txtprobability.Enabled = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked;
             txtlambda.Enabled = radioButton4.Checked;
             txttime.Enabled = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked;
-            txtserver.Enabled = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked; 
-            txtattacker.Enabled = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked || radioButton6.Checked; // Sempre abilitato
-            txtGen.Enabled = radioButton6.Checked;
+            txtserver.Enabled = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked ||radioButton8.Checked;
+            txtattacker.Enabled = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked || radioButton6.Checked || radioButton7.Checked; // Sempre abilitato
+            txtGen.Enabled = radioButton6.Checked || radioButton7.Checked;
 
             // Mostra/nasconde i controlli in base al RadioButton selezionato
             txtprobability.Visible = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked;
             txtlambda.Visible = radioButton4.Checked;
             txttime.Visible = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked;
-            txtserver.Visible = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked;
-            txtattacker.Visible = txtattacker.Enabled; // Sempre visibile
-            txtGen.Visible = radioButton6.Checked;
+            txtserver.Visible = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked || radioButton8.Checked; ;
+            txtattacker.Visible = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked || radioButton6.Checked || radioButton7.Checked ;
+            txtGen.Visible = radioButton6.Checked || radioButton7.Checked;
 
             // Aggiorna le etichette associate (se necessario)
             label3.Visible = txtprobability.Visible;
@@ -180,9 +196,26 @@ namespace homework_1
             label2.Visible = txtattacker.Visible;
             label6.Visible = txtGen.Visible;
 
- 
+            // Cambia il testo della label del server se RadioButton7 è selezionato
+            if (radioButton6.Checked || radioButton7.Checked)
+            {
+                label2.Text = "Samples";
+            }
+            else
+            {
+                label2.Text = "Path"; // Testo predefinito
+            }
+            if (radioButton8.Checked)
+            {
+                label1.Text = "Max U";
+            }
+            else
+            {
+                label1.Text = "Server"; // Testo predefinito
+            }
+
         }
-  
+
 
         private void ValidateInputs()
         {
@@ -262,7 +295,8 @@ namespace homework_1
             radioButton4.CheckedChanged += radioButton_CheckedChanged;
             radioButton5.CheckedChanged += radioButton_CheckedChanged;
             radioButton6.CheckedChanged += radioButton_CheckedChanged;
-
+            radioButton7.CheckedChanged += radioButton_CheckedChanged;
+            radioButton8.CheckedChanged += radioButton_CheckedChanged;
             HandleInputFields(); // Configura lo stato iniziale
         }
 
@@ -302,6 +336,26 @@ namespace homework_1
         }
 
         private void radioButton6_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton7_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton8_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Case1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Case2_CheckedChanged(object sender, EventArgs e)
         {
 
         }

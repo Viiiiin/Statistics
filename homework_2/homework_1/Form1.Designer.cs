@@ -50,6 +50,8 @@
             this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.labelMean = new System.Windows.Forms.Label();
             this.labelVar = new System.Windows.Forms.Label();
+            this.radioButton7 = new System.Windows.Forms.RadioButton();
+            this.radioButton8 = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // txtserver
@@ -265,12 +267,38 @@
             this.labelVar.Size = new System.Drawing.Size(0, 13);
             this.labelVar.TabIndex = 21;
             // 
+            // radioButton7
+            // 
+            this.radioButton7.AutoSize = true;
+            this.radioButton7.Location = new System.Drawing.Point(998, 16);
+            this.radioButton7.Name = "radioButton7";
+            this.radioButton7.Size = new System.Drawing.Size(48, 17);
+            this.radioButton7.TabIndex = 22;
+            this.radioButton7.TabStop = true;
+            this.radioButton7.Text = "HM7";
+            this.radioButton7.UseVisualStyleBackColor = true;
+            this.radioButton7.CheckedChanged += new System.EventHandler(this.radioButton7_CheckedChanged);
+            // 
+            // radioButton8
+            // 
+            this.radioButton8.AutoSize = true;
+            this.radioButton8.Location = new System.Drawing.Point(998, 57);
+            this.radioButton8.Name = "radioButton8";
+            this.radioButton8.Size = new System.Drawing.Size(70, 17);
+            this.radioButton8.TabIndex = 23;
+            this.radioButton8.TabStop = true;
+            this.radioButton8.Text = "HM7OPT";
+            this.radioButton8.UseVisualStyleBackColor = true;
+            this.radioButton8.CheckedChanged += new System.EventHandler(this.radioButton8_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(1386, 635);
+            this.Controls.Add(this.radioButton8);
+            this.Controls.Add(this.radioButton7);
             this.Controls.Add(this.labelVar);
             this.Controls.Add(this.labelMean);
             this.Controls.Add(this.radioButton6);
@@ -325,6 +353,8 @@
         private System.Windows.Forms.RadioButton radioButton6;
         private System.Windows.Forms.Label labelMean;
         private System.Windows.Forms.Label labelVar;
+        private System.Windows.Forms.RadioButton radioButton7;
+        private System.Windows.Forms.RadioButton radioButton8;
     }
 }
 

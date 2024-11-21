@@ -59,6 +59,7 @@ namespace homework_1
             Generate_Prob_array();
             Graphics g = e.Graphics;
             Paint_Theoretic_Distribution(g);
+
             // Calcolo delle somme cumulative
             Double[] cumulativeSums = new Double[this.n];
             cumulativeSums[0] = this.probabilities[0];
@@ -66,10 +67,16 @@ namespace homework_1
             {
                 cumulativeSums[i] = cumulativeSums[i - 1] + probabilities[i];
             }
+
             // Azzera l'array dei risultati
             Array.Clear(result, 0, result.Length);
 
-            // Genera i valori casuali
+            // Variabili per il Walford Algorithm
+            double meanEmpirical = 0;
+            double varianceEmpirical = 0;
+            int count = 0; // Numero totale di valori generati
+
+            // Genera i valori casuali e calcola direttamente media e varianza
             for (int i = 0; i < this.generation; i++)
             {
                 double randomValue = random.NextDouble();
@@ -80,29 +87,30 @@ namespace homework_1
                     if (randomValue < cumulativeSums[j])
                     {
                         result[j]++;
+                        count++;
+
+                        // Aggiornamento incrementale di media e varianza (Walford Algorithm)
+                        double delta = j - meanEmpirical;
+                        meanEmpirical += delta / count;
+                        double delta2 = j - meanEmpirical;
+                        varianceEmpirical += delta * delta2;
+
                         break;
                     }
                 }
-            Paint_Effective_Distribution(g);
+
+                Paint_Effective_Distribution(g);
             }
 
+            // Normalizza la varianza empirica
+            varianceEmpirical /= count;
 
-            // Converti result in probabilità
-            double sum = this.result.Sum();
-            double[] probResult = new double[result.Length];
-            for (int i = 0; i < result.Length; i++)
-            {
-                probResult[i] = result[i] / sum;
-            }
-
-            CalculateMeanAndVariance(probResult, out double meanEmpirical, out double varEmpirical);
+            // Calcola media e varianza teoriche
             CalculateMeanAndVariance(probabilities, out double meanTheoretical, out double varTheoretical);
 
             // Aggiorna le Label con entrambe le medie e varianze
             labelMean.Text = $"Mean Th/Emp: {meanTheoretical:F2}/{meanEmpirical:F2}";
-            labelVar.Text = $"Var Th/Emp: {varTheoretical:F2}/{varEmpirical:F2}";
-
-           
+            labelVar.Text = $"Var Th/Emp: {varTheoretical:F2}/{varianceEmpirical:F2}";
         }
 
         public void CalculateMeanAndVariance(double[] probabilities, out double mean, out double variance)
