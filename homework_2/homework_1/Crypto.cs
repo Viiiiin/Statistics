@@ -183,7 +183,7 @@ namespace homework_1
             {
                 if (p > 0)
                 {
-                    entropy -= p * Math.Log(p);
+                    entropy -= p * Math.Log(p,2);
                 }
             }
 

@@ -28,16 +28,21 @@ namespace homework_1
         private SqrN sqrn;
         private ThAndEffective tae;
         private MThAndEffective mtae;
+        private VarThAndEffective varMtae;
         private CryptoDistribution cr;
+        private CryptoFrequency cf;
+        private RSAcrypto rsa;
+        private AES aes;
         private int t,server;
         private int homework = 0;
+        private bool calculationComplete = false;
 
 
         public Form1()
         {
             InitializeComponent();
-            
 
+           
 
         }
 
@@ -56,8 +61,6 @@ namespace homework_1
             bool ver = t < server && t > 0;
             bool verlamnda = lambda < server;
             ValidateInputs();
-            int[] casoA_Basi = { 2, 3, 10, 17 };
-            int[] casoB_Basi = { 3, 6, 9, 12 };
             this.server = server;
             this.graph = new Graph(attacker, server, this.Width, this.Height);
             this.bernulli = new Bernulli(graph, server, attacker, t, probability);
@@ -68,6 +71,10 @@ namespace homework_1
             this.tae = new ThAndEffective(generation, attacker, this.Width, this.Height,labelMean,labelVar);
             this.mtae= new MThAndEffective(generation, attacker, this.Width, this.Height, labelMean, labelVar);
             this.cr = new CryptoDistribution(server,this.Width,this.Height,labelMean,labelVar);
+            this.cf = new CryptoFrequency(txtPlain.Text,this.Width,this.Height,output,labelVar);
+            this.rsa = new RSAcrypto(txtPlain.Text, t,  generation ,this.Width,this.Height,labelVar);
+            this.varMtae = new VarThAndEffective(generation, attacker, this.Width, this.Height, labelMean, labelVar);
+            this.aes = new AES(txtPlain.Text, this.Width, this.Height, output, labelVar);
             this.t = t;
 
             // Determina l'attacco selezionato
@@ -87,82 +94,113 @@ namespace homework_1
                 this.homework = 7;
             else if (radioButton8.Checked)
                 this.homework = 8;
+            else if (radioButton9.Checked)
+                this.homework = 9;
+            else if (radioButton10.Checked)
+                this.homework = 10;
+            else if (radioButton11.Checked)
+                this.homework = 11;
+            else if (radioButton12.Checked)
+                this.homework = 12;
+            this.Invalidate();
+            this.Paint += Form1_Paint;
+            calculationComplete = true;
 
-            // Dissocia e riassocia l'evento Paint
-            this.Paint -= Form1_Paint;
-            this.Paint += new PaintEventHandler(Form1_Paint);
-            this.Invalidate(); // Richiama il Paint
-            
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
+            if (calculationComplete)
+            {
+                // Solo disegni necessari
 
             int[] result = new int[1];
-            int[] result_t = new int[1];
-            this.graph.Create_Graphic(sender, e);
+                int[] result_t = new int[1];
+                this.graph.Create_Graphic(sender, e);
 
-            switch (homework)
-            {
-                case 1: // Bernulli
-                    this.bernulli.Paint_Attack(sender, e);
-                    result = bernulli.result;
-                    result_t = bernulli.result_t;
-                    this.graph.Paint_Distribution(sender, e, result, this.server);
-                    this.graph.Create_Distribution_Graphic(sender, e, result, this.server);
-                    this.graph.Paint_Distribution(sender, e, result_t, t);
-                    this.graph.Create_Distribution_Graphic(sender, e, result_t, t);
-                    break;
-                case 2: // RandomWalk
-                    this.randomWalk.Paint_Attack(sender, e);
-                    result = randomWalk.result;
-                    result_t = randomWalk.result_t;
-                    this.graph.Paint_Distribution(sender, e, result, this.server);
-                    this.graph.Create_Distribution_Graphic(sender, e, result, this.server);
-                    this.graph.Paint_Distribution(sender, e, result_t, t);
-                    this.graph.Create_Distribution_Graphic(sender, e, result_t, t);
-                    break;
-                case 3: // RelFreq
-                    this.relfreq.Paint_Attack(sender, e);
-                    result = relfreq.result;
-                    result_t = relfreq.result_t;
-                    this.graph.Paint_Distribution(sender, e, result, this.server);
-                    this.graph.Create_Distribution_Graphic(sender, e, result, this.server);
-                    this.graph.Paint_Distribution(sender, e, result_t, t);
-                    this.graph.Create_Distribution_Graphic(sender, e, result_t, t);
-                    break;
-                case 4: // Lambda
-                    this.berlambda.Paint_Attack(sender, e);
-                    result = berlambda.result;
-                    result_t = berlambda.result_t;
-                    this.graph.Paint_Distribution(sender, e, result, this.server);
-                    this.graph.Create_Distribution_Graphic(sender, e, result, this.server);
-                    this.graph.Paint_Distribution(sender, e, result_t, t);
-                    this.graph.Create_Distribution_Graphic(sender, e, result_t, t);
-                    break;
+                switch (homework)
+                {
+                    case 1: // Bernulli
+                        this.graph.Create_Graphic(sender, e);
+                        this.bernulli.Paint_Attack(sender, e);
+                        result = bernulli.result;
+                        result_t = bernulli.result_t;
+                        this.graph.Paint_Distribution(sender, e, result, this.server);
+                        this.graph.Create_Distribution_Graphic(sender, e, result, this.server);
+                        this.graph.Paint_Distribution(sender, e, result_t, t);
+                        this.graph.Create_Distribution_Graphic(sender, e, result_t, t);
+                        break;
+                    case 2: // RandomWalk
+                        this.graph.Create_Graphic(sender, e);
+                        this.randomWalk.Paint_Attack(sender, e);
+                        result = randomWalk.result;
+                        result_t = randomWalk.result_t;
+                        this.graph.Paint_Distribution(sender, e, result, this.server);
+                        this.graph.Create_Distribution_Graphic(sender, e, result, this.server);
+                        this.graph.Paint_Distribution(sender, e, result_t, t);
+                        this.graph.Create_Distribution_Graphic(sender, e, result_t, t);
+                        break;
+                    case 3: // RelFreq
+                        this.graph.Create_Graphic(sender, e);
+                        this.relfreq.Paint_Attack(sender, e);
+                        result = relfreq.result;
+                        result_t = relfreq.result_t;
+                        this.graph.Paint_Distribution(sender, e, result, this.server);
+                        this.graph.Create_Distribution_Graphic(sender, e, result, this.server);
+                        this.graph.Paint_Distribution(sender, e, result_t, t);
+                        this.graph.Create_Distribution_Graphic(sender, e, result_t, t);
+                        break;
+                    case 4: // Lambda
+                        this.graph.Create_Graphic(sender, e);
+                        this.berlambda.Paint_Attack(sender, e);
+                        result = berlambda.result;
+                        result_t = berlambda.result_t;
+                        this.graph.Paint_Distribution(sender, e, result, this.server);
+                        this.graph.Create_Distribution_Graphic(sender, e, result, this.server);
+                        this.graph.Paint_Distribution(sender, e, result_t, t);
+                        this.graph.Create_Distribution_Graphic(sender, e, result_t, t);
+                        break;
 
-                case 5: // sqrN
-                    this.sqrn.Paint_Attack(sender, e);
-                    result = sqrn.result;
-                    result_t = sqrn.result_t;
-                    this.graph.Paint_Distribution(sender, e, result, this.server);
-                    this.graph.Create_Distribution_Graphic(sender, e, result, this.server);
-                    this.graph.Paint_Distribution(sender, e, result_t, t);
-                    this.graph.Create_Distribution_Graphic(sender, e, result_t, t);
+                    case 5: // sqrN
+                        this.graph.Create_Graphic(sender, e);
+                        this.sqrn.Paint_Attack(sender, e);
+                        result = sqrn.result;
+                        result_t = sqrn.result_t;
+                        this.graph.Paint_Distribution(sender, e, result, this.server);
+                        this.graph.Create_Distribution_Graphic(sender, e, result, this.server);
+                        this.graph.Paint_Distribution(sender, e, result_t, t);
+                        this.graph.Create_Distribution_Graphic(sender, e, result_t, t);
+                        break;
+                    case 6:
+                        this.graph.Create_Graphic(sender, e);
+                        this.tae.Create_Distribution(sender, e);
+                        break;
+                    case 7:
+                        this.graph.Create_Graphic(sender, e);
+                        this.mtae.Create_Distribution(sender, e);
+                        break;
+                    case 8:
+                        this.cr.DrawDistributions(sender, e);
+                        break;
+                    case 9:
+                        
+                        this.cf.AnalyzeAndDecrypt(sender, e);
                     break;
-                case 6:
-                    this.tae.Create_Distribution(sender, e);
-                    break;
-                case 7:
-                    this.mtae.Create_Distribution(sender, e);
-                    break;
-                case 8:
-                    this.cr.DrawDistributions(sender, e);
-                    break;
+                    case 10:
+                        
+                        this.rsa.AnalyzeAndDecrypt(sender, e);
+                        break;
+                    case 11:
+                        this.varMtae.Create_Distribution(sender, e);
+                        break;
+                    case 12:
+                        this.aes.AnalyzeAndDecrypt(sender, e);
+                        break;
+
+                }
+
+                calculationComplete = false;
             }
-
-           
-
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -175,18 +213,21 @@ namespace homework_1
             // Disabilita/abilita i controlli in base al RadioButton selezionato
             txtprobability.Enabled = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked;
             txtlambda.Enabled = radioButton4.Checked;
-            txttime.Enabled = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked;
+            txttime.Enabled = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked || radioButton10.Checked;
             txtserver.Enabled = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked ||radioButton8.Checked;
-            txtattacker.Enabled = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked || radioButton6.Checked || radioButton7.Checked; // Sempre abilitato
-            txtGen.Enabled = radioButton6.Checked || radioButton7.Checked;
+            txtattacker.Enabled = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked || radioButton6.Checked || radioButton7.Checked || radioButton11.Checked; // Sempre abilitato
+            txtGen.Enabled = radioButton6.Checked || radioButton7.Checked || radioButton10.Checked || radioButton11.Checked; ; 
+            txtPlain.Enabled = radioButton9.Checked || radioButton10.Checked || radioButton12.Checked;
 
             // Mostra/nasconde i controlli in base al RadioButton selezionato
-            txtprobability.Visible = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked;
+            txtprobability.Visible = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked ;
             txtlambda.Visible = radioButton4.Checked;
-            txttime.Visible = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked;
-            txtserver.Visible = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked || radioButton8.Checked; ;
-            txtattacker.Visible = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked || radioButton6.Checked || radioButton7.Checked ;
-            txtGen.Visible = radioButton6.Checked || radioButton7.Checked;
+            txttime.Visible = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked || radioButton10.Checked; 
+            txtserver.Visible = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked || radioButton8.Checked;
+            txtattacker.Visible = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked || radioButton6.Checked || radioButton7.Checked || radioButton11.Checked; ;
+            txtGen.Visible = radioButton6.Checked || radioButton7.Checked || radioButton10.Checked || radioButton11.Checked; ;
+            txtPlain.Visible = txtPlain.Enabled;
+
 
             // Aggiorna le etichette associate (se necessario)
             label3.Visible = txtprobability.Visible;
@@ -195,9 +236,11 @@ namespace homework_1
             label1.Visible = txtserver.Visible;
             label2.Visible = txtattacker.Visible;
             label6.Visible = txtGen.Visible;
+            label7.Visible = txtPlain.Visible;
+            output.Visible = radioButton9.Checked;
 
             // Cambia il testo della label del server se RadioButton7 è selezionato
-            if (radioButton6.Checked || radioButton7.Checked)
+            if (radioButton6.Checked || radioButton7.Checked || radioButton11.Checked)
             {
                 label2.Text = "Samples";
             }
@@ -205,13 +248,20 @@ namespace homework_1
             {
                 label2.Text = "Path"; // Testo predefinito
             }
-            if (radioButton8.Checked)
+            if (radioButton9.Checked)
             {
-                label1.Text = "Max U";
+                labelMean.AutoSize = false;
+                labelMean.MaximumSize = new Size(20, 10);
+            }
+            if (radioButton10.Checked)
+            {
+                label4.Text = "P";
+                label6.Text = "Exponent";
             }
             else
             {
-                label1.Text = "Server"; // Testo predefinito
+                label4.Text = "T";
+                label6.Text = "Generation";
             }
 
         }
@@ -297,6 +347,10 @@ namespace homework_1
             radioButton6.CheckedChanged += radioButton_CheckedChanged;
             radioButton7.CheckedChanged += radioButton_CheckedChanged;
             radioButton8.CheckedChanged += radioButton_CheckedChanged;
+            radioButton9.CheckedChanged += radioButton_CheckedChanged;
+            radioButton10.CheckedChanged += radioButton_CheckedChanged;
+            radioButton11.CheckedChanged += radioButton_CheckedChanged;
+            radioButton12.CheckedChanged += radioButton_CheckedChanged;
             HandleInputFields(); // Configura lo stato iniziale
         }
 
@@ -350,12 +404,17 @@ namespace homework_1
 
         }
 
-        private void Case1_CheckedChanged(object sender, EventArgs e)
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void Case2_CheckedChanged(object sender, EventArgs e)
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton9_CheckedChanged(object sender, EventArgs e)
         {
 
         }
@@ -364,5 +423,36 @@ namespace homework_1
         {
 
         }
+
+        private void radioButton10_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void output_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton11_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton12_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_ClickToShowFullText(object sender, EventArgs e)
+        {
+          
+        }
+
     }
 }
