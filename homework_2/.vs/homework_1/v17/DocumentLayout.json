@@ -3,36 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\variance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|solutionrelative:homework_1\\variance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|c:\\users\\vboxuser\\desktop\\statistics\\homework_2\\homework_1\\hw10.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|solutionrelative:homework_1\\hw10.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|c:\\users\\vboxuser\\desktop\\statistics\\homework_2\\homework_1\\aes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|solutionrelative:homework_1\\aes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\mthandemp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|solutionrelative:homework_1\\mthandemp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|c:\\users\\vboxuser\\desktop\\statistics\\homework_2\\homework_1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|solutionrelative:homework_1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|solutionrelative:homework_1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\cryptofrequency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|solutionrelative:homework_1\\cryptofrequency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\crypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|solutionrelative:homework_1\\crypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\aes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|solutionrelative:homework_1\\aes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|solutionrelative:homework_1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\mthandemp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|solutionrelative:homework_1\\mthandemp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\rsacrypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|solutionrelative:homework_1\\rsacrypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\variance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|solutionrelative:homework_1\\variance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\ThAndEffective.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|solutionrelative:homework_1\\ThAndEffective.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\cryptofrequency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|solutionrelative:homework_1\\cryptofrequency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\Graph.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -49,10 +57,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\RandomWalk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|solutionrelative:homework_1\\RandomWalk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\ThAndEffective.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|solutionrelative:homework_1\\ThAndEffective.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8F722D4D-B4C0-43A4-B02C-41D7F49C37AF}|homework_1\\homework_1.csproj|C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\SqrN.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -74,7 +78,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -90,20 +94,22 @@
               "RelativeToolTip": "homework_1\\Form1.cs [Progettazione]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-04T15:27:56.484Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": " [Progettazione]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "Crypto.cs",
               "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\Crypto.cs",
               "RelativeDocumentMoniker": "homework_1\\Crypto.cs",
               "ToolTip": "C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\Crypto.cs",
               "RelativeToolTip": "homework_1\\Crypto.cs",
-              "ViewState": "AgIAAJ4AAAAAAAAAAAAQwLIAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAwwKoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-19T16:26:55.321Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -116,93 +122,105 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\Form1.cs",
+              "RelativeDocumentMoniker": "homework_1\\Form1.cs",
+              "ToolTip": "C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\Form1.cs",
+              "RelativeToolTip": "homework_1\\Form1.cs",
+              "ViewState": "AgIAACQBAAAAAAAAAAAWwHYAAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T20:28:56.215Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Variance.cs",
+              "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\Variance.cs",
+              "RelativeDocumentMoniker": "homework_1\\Variance.cs",
+              "ToolTip": "C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\Variance.cs",
+              "RelativeToolTip": "homework_1\\Variance.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T16:33:13.77Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "hw10.cs",
+              "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\hw10.cs",
+              "RelativeDocumentMoniker": "homework_1\\hw10.cs",
+              "ToolTip": "C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\hw10.cs",
+              "RelativeToolTip": "homework_1\\hw10.cs",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAcwJgAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T16:17:00.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "AES.cs",
               "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\AES.cs",
               "RelativeDocumentMoniker": "homework_1\\AES.cs",
               "ToolTip": "C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\AES.cs",
               "RelativeToolTip": "homework_1\\AES.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJcAAABAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAJcAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-30T15:52:24.641Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Variance.cs",
-              "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\Variance.cs",
-              "RelativeDocumentMoniker": "homework_1\\Variance.cs",
-              "ToolTip": "C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\Variance.cs",
-              "RelativeToolTip": "homework_1\\Variance.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T16:33:13.77Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "RSAcrypto.cs",
               "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\RSAcrypto.cs",
               "RelativeDocumentMoniker": "homework_1\\RSAcrypto.cs",
               "ToolTip": "C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\RSAcrypto.cs",
               "RelativeToolTip": "homework_1\\RSAcrypto.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAAAIcAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAKoAAAAAAAAAAAAuwMIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-25T15:54:34.045Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "MThAndEmp.cs",
               "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\MThAndEmp.cs",
               "RelativeDocumentMoniker": "homework_1\\MThAndEmp.cs",
               "ToolTip": "C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\MThAndEmp.cs",
               "RelativeToolTip": "homework_1\\MThAndEmp.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAANwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T17:33:16.276Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T17:33:16.276Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "CryptoFrequency.cs",
               "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\CryptoFrequency.cs",
               "RelativeDocumentMoniker": "homework_1\\CryptoFrequency.cs",
               "ToolTip": "C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\CryptoFrequency.cs",
               "RelativeToolTip": "homework_1\\CryptoFrequency.cs",
-              "ViewState": "AgIAAPAAAAAAAAAAAAAgwBcBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-25T12:38:46.289Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\Form1.cs",
-              "RelativeDocumentMoniker": "homework_1\\Form1.cs",
-              "ToolTip": "C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\Form1.cs",
-              "RelativeToolTip": "homework_1\\Form1.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAQwLsAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-04T15:29:18.705Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 8,
               "Title": "ThAndEffective.cs",
               "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\ThAndEffective.cs",
               "RelativeDocumentMoniker": "homework_1\\ThAndEffective.cs",
               "ToolTip": "C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\ThAndEffective.cs",
               "RelativeToolTip": "homework_1\\ThAndEffective.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAAAUAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-11T16:23:58.159Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Graph.cs",
               "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\Graph.cs",
               "RelativeDocumentMoniker": "homework_1\\Graph.cs",
@@ -214,7 +232,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "RandomWalk.cs",
               "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\RandomWalk.cs",
               "RelativeDocumentMoniker": "homework_1\\RandomWalk.cs",
@@ -226,7 +244,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "SqrN.cs",
               "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\SqrN.cs",
               "RelativeDocumentMoniker": "homework_1\\SqrN.cs",
@@ -238,7 +256,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "BerLambda.cs",
               "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\BerLambda.cs",
               "RelativeDocumentMoniker": "homework_1\\BerLambda.cs",
@@ -250,7 +268,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "RelFreq.cs",
               "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\RelFreq.cs",
               "RelativeDocumentMoniker": "homework_1\\RelFreq.cs",
@@ -262,7 +280,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Bernulli.cs",
               "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\Bernulli.cs",
               "RelativeDocumentMoniker": "homework_1\\Bernulli.cs",
@@ -274,7 +292,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "C:\\Users\\vboxuser\\Desktop\\Statistics\\homework_2\\homework_1\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "homework_1\\Form1.Designer.cs",
@@ -282,7 +300,8 @@
               "RelativeToolTip": "homework_1\\Form1.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-04T15:39:16.825Z"
+              "WhenOpened": "2024-10-04T15:39:16.825Z",
+              "EditorCaption": ""
             }
           ]
         }

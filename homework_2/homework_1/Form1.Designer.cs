@@ -59,6 +59,9 @@
             this.output = new System.Windows.Forms.TextBox();
             this.radioButton11 = new System.Windows.Forms.RadioButton();
             this.radioButton12 = new System.Windows.Forms.RadioButton();
+            this.radioButton13 = new System.Windows.Forms.RadioButton();
+            this.functionSelector = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtserver
@@ -378,12 +381,45 @@
             this.radioButton12.UseVisualStyleBackColor = true;
             this.radioButton12.CheckedChanged += new System.EventHandler(this.radioButton12_CheckedChanged);
             // 
+            // radioButton13
+            // 
+            this.radioButton13.AutoSize = true;
+            this.radioButton13.Location = new System.Drawing.Point(1255, 16);
+            this.radioButton13.Name = "radioButton13";
+            this.radioButton13.Size = new System.Drawing.Size(51, 17);
+            this.radioButton13.TabIndex = 31;
+            this.radioButton13.TabStop = true;
+            this.radioButton13.Text = "hw10";
+            this.radioButton13.UseVisualStyleBackColor = true;
+            this.radioButton13.CheckedChanged += new System.EventHandler(this.radioButton13_CheckedChanged);
+            // 
+            // functionSelector
+            // 
+            this.functionSelector.FormattingEnabled = true;
+            this.functionSelector.Location = new System.Drawing.Point(94, 50);
+            this.functionSelector.Name = "functionSelector";
+            this.functionSelector.Size = new System.Drawing.Size(168, 21);
+            this.functionSelector.TabIndex = 32;
+            this.functionSelector.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(34, 53);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(48, 13);
+            this.label8.TabIndex = 33;
+            this.label8.Text = "Function";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(1386, 635);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.functionSelector);
+            this.Controls.Add(this.radioButton13);
             this.Controls.Add(this.radioButton12);
             this.Controls.Add(this.radioButton11);
             this.Controls.Add(this.output);
@@ -456,6 +492,9 @@
         private System.Windows.Forms.TextBox output;
         private System.Windows.Forms.RadioButton radioButton11;
         private System.Windows.Forms.RadioButton radioButton12;
+        private System.Windows.Forms.RadioButton radioButton13;
+        private System.Windows.Forms.ComboBox functionSelector;
+        private System.Windows.Forms.Label label8;
     }
 }
 

@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using System.Xml.Serialization;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TreeView;
 
@@ -33,6 +34,8 @@ namespace homework_1
         private CryptoFrequency cf;
         private RSAcrypto rsa;
         private AES aes;
+        private NumericalIntegration re;
+        private Dictionary<string, Func<double, double>> functions;
         private int t,server;
         private int homework = 0;
         private bool calculationComplete = false;
@@ -59,49 +62,69 @@ namespace homework_1
             bool parseLambda = int.TryParse(txtlambda.Text, out lambda);
             bool parseGen = int.TryParse(txtGen.Text, out generation);
             bool ver = t < server && t > 0;
+            string selectedFunction = functionSelector.SelectedItem.ToString();
+            Func<double, double> function = functions[selectedFunction];
             bool verlamnda = lambda < server;
+            
             ValidateInputs();
             this.server = server;
-            this.graph = new Graph(attacker, server, this.Width, this.Height);
-            this.bernulli = new Bernulli(graph, server, attacker, t, probability);
-            this.berlambda = new BerLambda(graph, server, attacker, t, probability,lambda);
-            this.relfreq = new RelFreq(graph, server, attacker, t, probability);
-            this.randomWalk = new RandomWalk(graph, server, attacker, t, probability);
-            this.sqrn = new SqrN(graph, server, attacker, t,probability);
-            this.tae = new ThAndEffective(generation, attacker, this.Width, this.Height,labelMean,labelVar);
-            this.mtae= new MThAndEffective(generation, attacker, this.Width, this.Height, labelMean, labelVar);
-            this.cr = new CryptoDistribution(server,this.Width,this.Height,labelMean,labelVar);
-            this.cf = new CryptoFrequency(txtPlain.Text,this.Width,this.Height,output,labelVar);
-            this.rsa = new RSAcrypto(txtPlain.Text, t,  generation ,this.Width,this.Height,labelVar);
-            this.varMtae = new VarThAndEffective(generation, attacker, this.Width, this.Height, labelMean, labelVar);
-            this.aes = new AES(txtPlain.Text, this.Width, this.Height, output, labelVar);
-            this.t = t;
+            RadioButton[] radioButtons = new RadioButton[]
+            {
+                radioButton1, radioButton2, radioButton3, radioButton4, radioButton5,
+                radioButton6, radioButton7, radioButton8, radioButton9, radioButton10,
+                radioButton11, radioButton12, radioButton13
+            };
+            
+            // Determina l'attacco selezionato
+            this.homework = Array.FindIndex(radioButtons, rb => rb.Checked) + 1;
+            switch (homework)
+            {
+                case 1:
+                    this.bernulli = new Bernulli(graph, server, attacker, t, probability);
+                    break;
+                case 2:
+                    this.randomWalk = new RandomWalk(graph, server, attacker, t, probability);
+                    break;
+                case 3:
+                    this.relfreq = new RelFreq(graph, server, attacker, t, probability);
+                    break;
+                case 4:
+                    this.berlambda = new BerLambda(graph, server, attacker, t, probability, lambda);
+                    break;
+                case 5:
+                    this.sqrn = new SqrN(graph, server, attacker, t, probability);
+                    break;
+                case 6:
+                    this.tae = new ThAndEffective(generation, attacker, this.Width, this.Height, labelMean, labelVar);
+                    break;
+                case 7:
+                    this.mtae = new MThAndEffective(generation, attacker, this.Width, this.Height, labelMean, labelVar);
+                    break;
+                case 8:
+                    this.cr = new CryptoDistribution(server, this.Width, this.Height, labelMean, labelVar);
+                    break;
+                case 9:
+                    this.cf = new CryptoFrequency(txtPlain.Text, this.Width, this.Height, output, labelVar);
+                    break;
+                case 10:
+                    this.rsa = new RSAcrypto(txtPlain.Text, t, generation, this.Width, this.Height, labelVar);
+                    break;
+                case 11:
+                    this.varMtae = new VarThAndEffective(generation, attacker, this.Width, this.Height, labelMean, labelVar);
+                    break;
+                case 12:
+                    this.aes = new AES(txtPlain.Text, this.Width, this.Height, output, labelVar);
+                    break;
+                case 13:
+                    this.re = new NumericalIntegration(generation, attacker, server, function, labelMean, labelVar, this.Height, this.Width);
+                    break;
+            }
+                    this.t = t;
 
             // Determina l'attacco selezionato
-            if (radioButton1.Checked)
-                this.homework = 1;
-            else if (radioButton2.Checked)
-                this.homework = 2;
-            else if (radioButton3.Checked)
-               this.homework = 3;
-            else if(radioButton4.Checked)
-                this.homework = 4;
-            else if (radioButton5.Checked)
-                this.homework = 5;
-            else if (radioButton6.Checked)
-                this.homework = 6;
-            else if (radioButton7.Checked)
-                this.homework = 7;
-            else if (radioButton8.Checked)
-                this.homework = 8;
-            else if (radioButton9.Checked)
-                this.homework = 9;
-            else if (radioButton10.Checked)
-                this.homework = 10;
-            else if (radioButton11.Checked)
-                this.homework = 11;
-            else if (radioButton12.Checked)
-                this.homework = 12;
+            // Creazione di un array o una lista per i RadioButton
+
+
             this.Invalidate();
             this.Paint += Form1_Paint;
             calculationComplete = true;
@@ -116,7 +139,7 @@ namespace homework_1
 
             int[] result = new int[1];
                 int[] result_t = new int[1];
-                this.graph.Create_Graphic(sender, e);
+             
 
                 switch (homework)
                 {
@@ -196,6 +219,10 @@ namespace homework_1
                     case 12:
                         this.aes.AnalyzeAndDecrypt(sender, e);
                         break;
+                    case 13:
+
+                        this.re.Paint(sender, e);
+                        break;
 
                 }
 
@@ -214,20 +241,20 @@ namespace homework_1
             txtprobability.Enabled = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked;
             txtlambda.Enabled = radioButton4.Checked;
             txttime.Enabled = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked || radioButton10.Checked;
-            txtserver.Enabled = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked ||radioButton8.Checked;
-            txtattacker.Enabled = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked || radioButton6.Checked || radioButton7.Checked || radioButton11.Checked; // Sempre abilitato
-            txtGen.Enabled = radioButton6.Checked || radioButton7.Checked || radioButton10.Checked || radioButton11.Checked; ; 
+            txtserver.Enabled = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked ||radioButton8.Checked || radioButton13.Checked; ;
+            txtattacker.Enabled = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked || radioButton6.Checked || radioButton7.Checked || radioButton13.Checked|| radioButton11.Checked || radioButton13.Checked; // Sempre abilitato
+            txtGen.Enabled = radioButton6.Checked || radioButton7.Checked || radioButton10.Checked || radioButton11.Checked || radioButton13.Checked; 
             txtPlain.Enabled = radioButton9.Checked || radioButton10.Checked || radioButton12.Checked;
-
+            functionSelector.Enabled = radioButton13.Checked;
             // Mostra/nasconde i controlli in base al RadioButton selezionato
             txtprobability.Visible = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked ;
             txtlambda.Visible = radioButton4.Checked;
             txttime.Visible = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked || radioButton10.Checked; 
-            txtserver.Visible = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked || radioButton8.Checked;
-            txtattacker.Visible = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked || radioButton6.Checked || radioButton7.Checked || radioButton11.Checked; ;
-            txtGen.Visible = radioButton6.Checked || radioButton7.Checked || radioButton10.Checked || radioButton11.Checked; ;
+            txtserver.Visible = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked || radioButton8.Checked || radioButton13.Checked;
+            txtattacker.Visible = radioButton1.Checked || radioButton2.Checked || radioButton3.Checked || radioButton4.Checked || radioButton5.Checked || radioButton6.Checked || radioButton7.Checked || radioButton11.Checked || radioButton13.Checked;
+            txtGen.Visible = radioButton6.Checked || radioButton7.Checked || radioButton10.Checked || radioButton11.Checked || radioButton13.Checked; 
             txtPlain.Visible = txtPlain.Enabled;
-
+            functionSelector.Visible = radioButton13.Checked;
 
             // Aggiorna le etichette associate (se necessario)
             label3.Visible = txtprobability.Visible;
@@ -237,36 +264,69 @@ namespace homework_1
             label2.Visible = txtattacker.Visible;
             label6.Visible = txtGen.Visible;
             label7.Visible = txtPlain.Visible;
+            label8.Visible = functionSelector.Visible;
             output.Visible = radioButton9.Checked;
 
-            // Cambia il testo della label del server se RadioButton7 è selezionato
+            // Modifica i valori delle etichette in base al RadioButton selezionato
             if (radioButton6.Checked || radioButton7.Checked || radioButton11.Checked)
             {
                 label2.Text = "Samples";
             }
+            else if (radioButton10.Checked)
+            {
+                label4.Text = "P";
+                label6.Text = "Exponent";
+            }
+            else if (radioButton13.Checked)
+            {
+                label6.Text = "Lower";
+                label2.Text = "Upper";
+                label1.Text = "Intervals";
+            }
             else
             {
-                label2.Text = "Path"; // Testo predefinito
+                // Valori predefiniti per le etichette
+                label2.Text = "Path";
+                label4.Text = "T";
+                label6.Text = "Generation";
+                label1.Text = "Server"; // Predefinito per il server
             }
+
+            // Configura la visualizzazione speciale per labelMean se radioButton9 è selezionato
             if (radioButton9.Checked)
             {
                 labelMean.AutoSize = false;
                 labelMean.MaximumSize = new Size(20, 10);
             }
-            if (radioButton10.Checked)
-            {
-                label4.Text = "P";
-                label6.Text = "Exponent";
-            }
             else
             {
-                label4.Text = "T";
-                label6.Text = "Generation";
+                labelMean.AutoSize = true; // Torna al comportamento predefinito
+                labelMean.MaximumSize = Size.Empty; // Nessuna dimensione massima
             }
-
         }
 
+        private void InitializeFunctions()
+        {
+            // Map function names to actual functions
+            functions = new Dictionary<string, Func<double, double>>()
+            {
+                { "Sin(x)", x => Math.Sin(x) },
+                { "Cos(x)", x => Math.Cos(x) },
+                { "Exp(x)", x => Math.Exp(x) },
+                { "x^2", x => Math.Pow(x, 2) },
+                { "Log(x)", x => Math.Log(x) }, // Logaritmo naturale
+                { "Abs(x)", x => Math.Abs(x) }, // Valore assoluto<w
+                { "Exp(-x)", x => Math.Exp(-x) }, // Esponenziale negativo
+            };
+            
+            foreach (var key in functions.Keys)
+            {
+                functionSelector.Items.Add(key);
+            }
 
+            // Set default selection
+            functionSelector.SelectedIndex = 0;
+        }
         private void ValidateInputs()
         {
             // Controlla i valori solo per le TextBox abilitate
@@ -351,7 +411,9 @@ namespace homework_1
             radioButton10.CheckedChanged += radioButton_CheckedChanged;
             radioButton11.CheckedChanged += radioButton_CheckedChanged;
             radioButton12.CheckedChanged += radioButton_CheckedChanged;
+            radioButton13.CheckedChanged += radioButton_CheckedChanged;
             HandleInputFields(); // Configura lo stato iniziale
+            InitializeFunctions();
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -445,6 +507,16 @@ namespace homework_1
         }
 
         private void radioButton12_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton13_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -64,6 +64,7 @@
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="BerLambda.cs" />
+    <Compile Include="hw10.cs" />
     <Compile Include="MThAndEmp.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
